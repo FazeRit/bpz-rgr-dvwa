@@ -15,6 +15,12 @@ if (array_key_exists ("id", $_GET) &&
 	$security = $_GET[ 'security' ];
 	$locale = $_GET[ 'locale' ];
 
+	if( !dvwaRgrValidPathParams( $id, $security, $locale ) ) {
+		http_response_code( 400 );
+		echo "ERROR: invalid parameters";
+		exit;
+	}
+
 	ob_start();
 	if ($locale == 'en') {
 		eval( '?>' . file_get_contents( DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/{$id}/help/help.php" ) . '<?php ' );
