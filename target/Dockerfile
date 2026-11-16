@@ -22,4 +22,7 @@ COPY --chown=www-data:www-data config/config.inc.php.dist config/config.inc.php
 
 # This is configuring the stuff for the API
 RUN cd /var/www/html/vulnerabilities/api \
- && composer install \
+ && composer install
+
+# --- RGR variant 8 hardening ---
+COPY hardening/uploads.conf /etc/apache2/conf-enabled/zz-uploads.conf
