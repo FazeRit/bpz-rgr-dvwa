@@ -1,0 +1,26 @@
+# Ізольоване розгортання цілі: внутрішня мережа без маршруту назовні,
+# порт опубліковано лише на loopback хоста.
+networks:
+  dvwa_internal:
+    internal: true
+  dvwa_edge: {}
+
+services:
+  dvwa:
+    build: ./target
+    image: bpz-dvwa:local
+    environment:
+      - DB_SERVER=db
+      - DEFAULT_SECURITY_LEVEL=low
+    depends_on: [db]
+    networks: [dvwa_internal, dvwa_edge]
+    ports:
+      - 127.0.0.1:4280:80
+  db:
+    image: docker.io/library/mariadb:10
+    environment:
+      - MYSQL_ROOT_PASSWORD=dvwa
+      - MYSQL_DATABASE=dvwa
+      - MYSQL_USER=dvwa
+      - MYSQL_PASSWORD=p@ssw0rd
+    networks: [dvwa_internal]
