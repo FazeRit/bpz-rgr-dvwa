@@ -26,3 +26,4 @@ RUN cd /var/www/html/vulnerabilities/api \
 
 # --- RGR variant 8 hardening ---
 COPY hardening/uploads.conf /etc/apache2/conf-enabled/zz-uploads.conf
+COPY hardening/security.ini /usr/local/etc/php/conf.d/zz-security.ini
