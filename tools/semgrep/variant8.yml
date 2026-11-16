@@ -1,0 +1,61 @@
+rules:
+  - id: v8-upload-client-controlled-filename
+    languages: [php]
+    severity: ERROR
+    message: Ім'я файлу на сервері формується з імені, наданого клієнтом ($_FILES[..]['name']); розширення не обмежено білим списком.
+    metadata: {cwe: ["CWE-434: Unrestricted Upload of File with Dangerous Type"]}
+    mode: taint
+    pattern-sources:
+      - pattern: $_FILES[$K]['name']
+    pattern-sinks:
+      - patterns:
+          - pattern: move_uploaded_file($TMP, $DEST)
+          - focus-metavariable: $DEST
+  - id: v8-upload-trusts-client-mime
+    languages: [php]
+    severity: WARNING
+    message: Рішення про тип файлу приймається за заголовком Content-Type від клієнта.
+    metadata: {cwe: ["CWE-345: Insufficient Verification of Data Authenticity"]}
+    pattern: $V = $_FILES[$K]['type'];
+  - id: v8-upload-path-disclosure
+    languages: [php]
+    severity: INFO
+    message: Серверний шлях збереження файлу повертається у відповіді.
+    metadata: {cwe: ["CWE-209: Generation of Error Message Containing Sensitive Information"]}
+    pattern: $H .= "<pre>{$target_path} ...";
+  - id: v8-include-page-without-allowlist
+    languages: [php]
+    severity: ERROR
+    message: Параметр page потрапляє в include() без перевірки за точним білим списком (обхід каталогів / включення файлів).
+    metadata: {cwe: ["CWE-98: Improper Control of Filename for Include/Require", "CWE-22: Path Traversal"]}
+    patterns:
+      - pattern: $F = $_GET['page'];
+      - pattern-not-inside: |
+          $F = $_GET['page'];
+          ...
+          if (!in_array($F, $LIST)) { ... }
+          ...
+      - pattern-not-inside: |
+          $F = $_GET['page'];
+          ...
+          if ($F !== null && !in_array($F, $LIST, true)) { ... }
+          ...
+      - pattern-not-inside: |
+          $F = isset($_GET['page']) ? $_GET['page'] : null;
+          ...
+  - id: v8-view-path-param-without-validation
+    languages: [php]
+    severity: ERROR
+    message: Параметр запиту потрапляє в шлях до файлу без перевірки за білим списком.
+    metadata: {cwe: ["CWE-22: Path Traversal"]}
+    mode: taint
+    pattern-sources:
+      - pattern: $_GET[$K]
+    pattern-sinks:
+      - patterns:
+          - pattern-either:
+              - pattern: file_get_contents(...)
+              - pattern: file_exists(...)
+          - pattern-not-inside: |
+              if (!dvwaRgrValidPathParams(...)) { ... }
+              ...
