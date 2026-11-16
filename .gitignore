@@ -1,4 +1,10 @@
 .venv/
 __pycache__/
 *.pyc
-docs/src/*.pdf
+.baseline/
+docs/
+report/
+evidence/
+scans/
+tools/docbuild/
+tools/screenshots.py
