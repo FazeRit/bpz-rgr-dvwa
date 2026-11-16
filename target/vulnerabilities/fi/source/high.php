@@ -1,11 +1,11 @@
 <?php
 
-// The page we wish to display
-$file = $_GET[ 'page' ];
+$allowedPages = array( 'include.php', 'file1.php', 'file2.php', 'file3.php' );
 
-// Input validation
-if( !fnmatch( "file*", $file ) && $file != "include.php" ) {
-	// This isn't the page we want!
+$file = isset( $_GET[ 'page' ] ) ? $_GET[ 'page' ] : null;
+
+if( $file !== null && !in_array( $file, $allowedPages, true ) ) {
+	http_response_code( 404 );
 	echo "ERROR: File not found!";
 	exit;
 }
