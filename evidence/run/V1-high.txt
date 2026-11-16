@@ -1,0 +1,50 @@
+# 2026-11-16T12:31:01.667012+00:00  target=http://127.0.0.1:4281
+> POST http://127.0.0.1:4281/vulnerabilities/upload/
+> User-Agent: python-requests/2.34.2
+> Accept-Encoding: gzip, deflate
+> Accept: */*
+> Connection: keep-alive
+> Content-Length: 425
+> Content-Type: multipart/form-data; boundary=07174dfe3507d7014d07b261d5584d1e
+>
+--07174dfe3507d7014d07b261d5584d1e
+Content-Disposition: form-data; name="Upload"
+
+Upload
+--07174dfe3507d7014d07b261d5584d1e
+Content-Disposition: form-data; name="MAX_FILE_SIZE"
+
+100000
+--07174dfe3507d7014d07b261d5584d1e
+Content-Disposition: form-data; name="uploaded"; filename="rgr-abe44abd.php"
+Content-Type: application/octet-stream
+
+RGR-MARKER plain text, not an image
+
+--07174dfe3507d7014d07b261d5584d1e--
+
+
+< HTTP 200
+< Server: nginx/1.27.5
+< Date: Mon, 16 Nov 2026 12:31:01 GMT
+< Content-Type: text/html;charset=utf-8
+< Content-Length: 1490
+< Connection: keep-alive
+< X-Powered-By: PHP/8.5.12
+< Expires: Tue, 23 Jun 2009 12:00:00 GMT
+< Cache-Control: no-cache, must-revalidate
+< Pragma: no-cache
+< Vary: Accept-Encoding
+< Content-Encoding: gzip
+<
+
+		<form enctype="multipart/form-data" action="#" method="POST">
+			<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+			Choose an image to upload:<br /><br />
+			<input name="uploaded" type="file" /><br />
+			<br />
+			<input type="submit" name="Upload" value="Upload" />
+
+		</form>
+		<pre>Your image was not uploaded. We can only accept JPEG or PNG images.</pre>
+	

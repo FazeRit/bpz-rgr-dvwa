@@ -1,0 +1,72 @@
+# 2026-11-16T12:31:02.853250+00:00  target=http://127.0.0.1:4281
+> GET http://127.0.0.1:4281/vulnerabilities/fi/?page=...%2F.%2F...%2F.%2Frobots.txt
+> User-Agent: python-requests/2.34.2
+> Accept-Encoding: gzip, deflate
+> Accept: */*
+> Connection: keep-alive
+>
+
+
+< HTTP 200
+< Server: nginx/1.27.5
+< Date: Mon, 16 Nov 2026 12:31:02 GMT
+< Content-Type: text/html; charset=UTF-8
+< Content-Length: 1294
+< Connection: keep-alive
+< X-Powered-By: PHP/8.5.12
+< Expires: Thu, 19 Nov 1981 08:52:00 GMT
+< Cache-Control: no-store, no-cache, must-revalidate
+< Pragma: no-cache
+< Vary: Accept-Encoding
+< Content-Encoding: gzip
+<
+User-agent: *
+Disallow: /<br />
+<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /var/www/html/robots.txt:1) in <b>/var/www/html/dvwa/includes/dvwaPage.inc.php</b> on line <b>384</b><br />
+<br />
+<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /var/www/html/robots.txt:1) in <b>/var/www/html/dvwa/includes/dvwaPage.inc.php</b> on line <b>385</b><br />
+<br />
+<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /var/www/html/robots.txt:1) in <b>/var/www/html/dvwa/includes/dvwaPage.inc.php</b> on line <b>386</b><br />
+<!DOCTYPE html>
+
+<html lang="en-GB">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<title>Vulnerability: File Inclusion :: Damn Vulnerable Web Application (DVWA)</title>
+
+		<link rel="stylesheet" type="text/css" href="../../dvwa/css/main.css" />
+
+		<link rel="icon" type="\image/ico" href="../../favicon.ico" />
+
+		<script type="text/javascript" src="../../dvwa/js/dvwaPage.js"></script>
+
+	</head>
+
+	<body class="home light">
+		<div id="container">
+
+			<div id="header">
+
+				<img src="../../dvwa/images/logo.png" alt="Damn Vulnerable Web Application" />
+                <a href="#" onclick="javascript:toggleTheme();" class="theme-icon" title="Toggle theme between light and dark.">
+                    <img src="../../dvwa/images/theme-light-dark.png" alt="Damn Vulnerable Web Application" />
+                </a>
+			</div>
+
+			<div id="main_menu">
+
+				<div id="main_menu_padded">
+				<ul class="menuBlocks"><li class=""><a href="../../.">Home</a></li>
+<li class=""><a href="../../instructions.php">Instructions</a></li>
+<li class=""><a href="../../setup.php">Setup / Reset DB</a></li>
+</ul><ul class="menuBlocks"><li class=""><a href="../../vulnerabilities/brute/">Brute Force</a></li>
+<li class=""><a href="../../vulnerabilities/exec/">Command Injection</a></li>
+<li class=""><a href="../../vulnerabilities/csrf/">CSRF</a></li>
+<li class="selected"><a href="../../vulnerabilities/fi/.?page=include.php">File Inclusion</a></li>
+<li class=""><a href="../../vulnerabilities/upload/">File Upload</a></li>
+<li class=""><a href="../../vulnerabilities/captcha/">Insecure CAPTCHA</a></li>
+<li class=""><a href="../../vulnerabilities/sqli/">SQL Injection</a></li>
+<li class=""><a href="../../vulnerabilities/sqli_blind/">SQL Injection (Blind)</a></li>
+<li class=""><a href="../../vulnerabilities/weak_id/">Weak 

@@ -1,0 +1,238 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:4917c1f3-ae42-49e3-bfb2-bd1c50e0f1c2",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-16T12:39:17+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.58.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "6cb19fce-ff17-4974-95be-b0e83c057e72",
+      "type": "application",
+      "name": "/src",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "5ab3bfcb-4443-4d08-87d6-9b32bfacfa23",
+      "type": "application",
+      "name": "vulnerabilities/api/composer.lock",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "composer"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:composer/psr/log@3.0.2",
+      "type": "library",
+      "name": "psr/log",
+      "version": "3.0.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:composer/psr/log@3.0.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "psr/log@3.0.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "composer"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:composer/symfony/deprecation-contracts@v3.8.1",
+      "type": "library",
+      "name": "symfony/deprecation-contracts",
+      "version": "v3.8.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:composer/symfony/deprecation-contracts@v3.8.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "symfony/deprecation-contracts@v3.8.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "composer"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:composer/symfony/finder@v7.2.2",
+      "type": "library",
+      "name": "symfony/finder",
+      "version": "v7.2.2",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:composer/symfony/finder@v7.2.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "symfony/finder@v7.2.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "composer"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:composer/symfony/polyfill-ctype@v1.37.0",
+      "type": "library",
+      "name": "symfony/polyfill-ctype",
+      "version": "v1.37.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:composer/symfony/polyfill-ctype@v1.37.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "symfony/polyfill-ctype@v1.37.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "composer"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:composer/symfony/yaml@v8.1.11",
+      "type": "library",
+      "name": "symfony/yaml",
+      "version": "v8.1.11",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:composer/symfony/yaml@v8.1.11",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "symfony/yaml@v8.1.11"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "composer"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:composer/zircote/swagger-php@4.11.1",
+      "type": "library",
+      "name": "zircote/swagger-php",
+      "version": "4.11.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:composer/zircote/swagger-php@4.11.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "zircote/swagger-php@4.11.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "composer"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "5ab3bfcb-4443-4d08-87d6-9b32bfacfa23",
+      "dependsOn": [
+        "pkg:composer/zircote/swagger-php@4.11.1"
+      ]
+    },
+    {
+      "ref": "6cb19fce-ff17-4974-95be-b0e83c057e72",
+      "dependsOn": [
+        "5ab3bfcb-4443-4d08-87d6-9b32bfacfa23"
+      ]
+    },
+    {
+      "ref": "pkg:composer/psr/log@3.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:composer/symfony/deprecation-contracts@v3.8.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:composer/symfony/finder@v7.2.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:composer/symfony/polyfill-ctype@v1.37.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:composer/symfony/yaml@v8.1.11",
+      "dependsOn": [
+        "pkg:composer/symfony/polyfill-ctype@v1.37.0"
+      ]
+    },
+    {
+      "ref": "pkg:composer/zircote/swagger-php@4.11.1",
+      "dependsOn": [
+        "pkg:composer/psr/log@3.0.2",
+        "pkg:composer/symfony/deprecation-contracts@v3.8.1",
+        "pkg:composer/symfony/finder@v7.2.2",
+        "pkg:composer/symfony/yaml@v8.1.11"
+      ]
+    }
+  ],
+  "vulnerabilities": []
+}
