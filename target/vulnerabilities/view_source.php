@@ -12,6 +12,12 @@ if (array_key_exists ("id", $_GET) && array_key_exists ("security", $_GET)) {
 	$id       = $_GET[ 'id' ];
 	$security = $_GET[ 'security' ];
 
+	if( !dvwaRgrValidPathParams( $id, $security ) ) {
+		http_response_code( 400 );
+		echo "ERROR: invalid parameters";
+		exit;
+	}
+
 
 	switch ($id) {
 		case "fi" :
