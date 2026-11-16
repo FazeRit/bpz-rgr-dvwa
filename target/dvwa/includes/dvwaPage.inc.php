@@ -688,4 +688,12 @@ $MYSQL_SERVER     = 'Database host: <em>' . $_DVWA[ 'db_server' ] . '</em>';
 $MYSQL_PORT       = 'Database port: <em>' . $_DVWA[ 'db_port' ] . '</em>';
 // -- END (Setup Functions)
 
+
+function dvwaRgrValidPathParams( $id, $security = 'low', $locale = 'en' ) {
+	return is_string( $id ) && preg_match( '/^[a-z_]{1,32}$/', $id ) === 1
+		&& is_dir( DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/{$id}" )
+		&& in_array( $security, array( 'low', 'medium', 'high', 'impossible' ), true )
+		&& in_array( $locale, array( 'en', 'zh' ), true );
+}
+
 ?>
